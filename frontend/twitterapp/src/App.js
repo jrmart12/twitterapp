@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './App.css'
-import IdeasContainer from './components/IdeasContainer'
+import IdeasContainer from './components/TweetContainer'
 
 class App extends Component {
   render() {
