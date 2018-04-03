@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import Tweet from './Tweet'
 class IdeasContainer extends Component {
 
 	constructor(props) {
@@ -22,13 +23,11 @@ class IdeasContainer extends Component {
   return (
     <div>
       {this.state.ideas.map((idea) => {
-        return(
-          <div className="tile" key={idea.id} >
-            <h4>{idea.username}</h4>
-            <p>{idea.body}</p>
-          </div>
-        )       
-      })}
+  return (<Tweet idea={idea} key={idea.id} />)
+})}
+  	  	     	<button className="newIdeaButton">
+  New Tweet
+</button>
     </div>
   );
 }
