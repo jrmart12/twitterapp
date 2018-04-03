@@ -4,10 +4,10 @@ import Tweet from './Tweet';
 
 class TweetForm extends Component{
     constructor(props){
-		super(props)
-		this.state = {
-            username: this.props.tweet.username,
-            body: this.props.tweet.body
+        super(props)
+        this.state = {
+            body: this.props.tweet.body,
+            username: this.props.tweet.username
         }
     }
 
@@ -23,7 +23,7 @@ class TweetForm extends Component{
             body: this.state.body
         }
         axios.put(
-            `http://localhost:3001/api/v1/tweets/${this.props.tweet.id}`,
+            `https://desolate-coast-40690.herokuapp.com/api/v1/tweets/${this.props.tweet.id}`,
             {
                 tweet: tweet
             }
@@ -35,12 +35,12 @@ class TweetForm extends Component{
     
     render() {
         return(
-            <div className= "blockquote.twitter-tweet a">
+            <div className= "twitter-tweet">
                 <form onBlur={this.handleBlur}>
-                    <textarea className="input" name="body" placeholder="tweet:"
+                    <textarea className="input" name="body" placeholder="Write your tweet:"
                     value={this.state.body} 
                     onChange={this.handleInput}></textarea>
-                    <input className="input-two" type="text" name="username" placeholder="Username:"
+                    <input className="input" type="text" name="username" placeholder="Username"
                     value={this.state.username} 
                     onChange={this.handleInput} />
                 </form>
@@ -48,5 +48,4 @@ class TweetForm extends Component{
         );
     }
 }
-
 export default TweetForm

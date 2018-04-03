@@ -31,7 +31,7 @@ module TwitterApi
     config.api_only = true
     config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins 'http://localhost:3001/api/v1/tweets'
+    origins '*'
     resource '*', :headers => :any, :methods => [:get, :post, :put, :delete, :options]
   end
 end

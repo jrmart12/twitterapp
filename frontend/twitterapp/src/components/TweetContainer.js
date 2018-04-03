@@ -15,7 +15,7 @@ class TweetContainer extends Component{
 	}
 
 	componentDidMount(){
-		axios.get('http://localhost:3001/api/v1/tweets.json').then(
+		axios.get('https://desolate-coast-40690.herokuapp.com/api/v1/tweets.json').then(
 			response => {
 				console.log(response)
 				this.setState({tweets: response.data})
@@ -26,7 +26,7 @@ class TweetContainer extends Component{
 
 	addNewTweet = () => {
 		axios.post(
-			'http://localhost:3001/api/v1/tweets',
+			'https://desolate-coast-40690.herokuapp.com/api/v1/tweets',
 			{ tweet:
 				{
 					username : '',
@@ -54,7 +54,6 @@ class TweetContainer extends Component{
 		})
 		this.setState({tweets: tweets})
 	}
-
 
 	render() {
 		return(
