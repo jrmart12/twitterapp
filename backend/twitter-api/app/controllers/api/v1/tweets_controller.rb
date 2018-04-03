@@ -5,13 +5,13 @@ module Api::V1
       render json: @tweets
     end
     def create
-  @tweets = Tweet.create(idea_params)
-  render json: @tweet
+  @tweets = Tweet.create(tweet_params)
+  render json: @tweets
 end
 
 private
 
-  def idea_params
+  def tweet_params
     params.require(:tweet).permit(:username, :body)
   end
   end
