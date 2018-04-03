@@ -6,8 +6,8 @@ class TweetForm extends Component{
     constructor(props){
         super(props)
         this.state = {
-            body: this.props.tweet.body,
-            username: this.props.tweet.username
+            username: this.props.tweet.username,
+            body: this.props.tweet.body
         }
     }
 
@@ -33,14 +33,14 @@ class TweetForm extends Component{
         }).catch(error => console.log(error))
     }
     
-    render() {
+      render() {
         return(
-            <div className= "twitter-tweet">
+            <div className= "tweet">
                 <form onBlur={this.handleBlur}>
-                    <textarea className="input" name="body" placeholder="Write your tweet:"
+                    <textarea className="input" name="body" placeholder="tweet:"
                     value={this.state.body} 
                     onChange={this.handleInput}></textarea>
-                    <input className="input" type="text" name="username" placeholder="Username"
+                    <input className="input" type="text" name="username" placeholder="Username:"
                     value={this.state.username} 
                     onChange={this.handleInput} />
                 </form>
